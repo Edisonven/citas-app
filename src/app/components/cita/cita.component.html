@@ -1,0 +1,13 @@
+<ion-card *ngIf="citaAleatoria">
+  <ion-card-content>
+    <h2>{{ citaAleatoria.cita }}</h2>
+    <br>
+    <p>{{ citaAleatoria.autor }}</p>
+    <br>
+    <ion-item lines="none">
+      <ion-button (click)="eliminarCita()" *ngIf="configurationService.permitirEliminarInicio" slot="end" fill="clear">
+        <ion-icon name="trash" color="primary"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

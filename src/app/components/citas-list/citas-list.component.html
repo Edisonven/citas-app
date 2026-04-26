@@ -1,0 +1,18 @@
+<ion-list lines="full">
+
+  <ion-item *ngFor="let c of citas">
+
+    <ion-label>
+      <h2>{{ c.cita }}</h2>
+      <br>
+      <p>{{ c.autor }}</p>
+    </ion-label>
+
+    <ion-button fill="clear" slot="end" (click)="deleteCita(c.id)">
+      <ion-icon name="trash-outline" color="primary">
+      </ion-icon>
+    </ion-button>
+
+  </ion-item>
+
+</ion-list>
