@@ -21,4 +21,10 @@ export class ConfigurationPage implements OnInit {
   ngOnInit() {
   }
 
+  guardarConfiguracion() {
+    this.configurationService.guardarConfiguracion(
+      this.configurationService.permitirEliminarInicio
+    );
+  }
+
 }

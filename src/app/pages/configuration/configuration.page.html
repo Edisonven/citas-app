@@ -14,6 +14,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-item>
-    <ion-toggle [(ngModel)]="configurationService.permitirEliminarInicio">Permitir eliminar citas en el inicio</ion-toggle>
+    <ion-toggle (ionChange)="guardarConfiguracion()" [(ngModel)]="configurationService.permitirEliminarInicio">Permitir
+      eliminar citas en el inicio</ion-toggle>
   </ion-item>
 </ion-content>
