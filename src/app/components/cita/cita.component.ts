@@ -26,7 +26,8 @@ export class CitaComponent implements OnInit {
     addIcons({ trash });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.citaService.cargarCitas();
     this.mostrarCitaAleatoria();
   }
 
@@ -36,8 +37,8 @@ export class CitaComponent implements OnInit {
     this.citaAleatoria = citas[indiceRandom];
   }
 
-  eliminarCita() {
-    this.citaService.eliminarCita(this.citaAleatoria.id);
+  async eliminarCita() {
+    await this.citaService.eliminarCita(this.citaAleatoria.id);
     this.mostrarCitaAleatoria();
   }
 

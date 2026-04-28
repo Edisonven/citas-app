@@ -27,17 +27,17 @@ export class GestionCitasPage implements OnInit {
     private citaService: CitaService
   ) { }
 
-  ngOnInit() {
-
+  async ngOnInit() {
+    await this.citaService.cargarCitas();
     this.citasList = this.citaService.obtenerCitas();
   }
 
-  eliminarCita(id: number) {
-    this.citasList = this.citaService.eliminarCita(id);
+  async eliminarCita(id: number) {
+    this.citasList = await this.citaService.eliminarCita(id);
   }
 
-  agregarCita(cita: Cita) {
-    this.citaService.agregarCita(cita);
+  async agregarCita(cita: Cita) {
+    await this.citaService.agregarCita(cita);
     this.citasList = this.citaService.obtenerCitas();
   }
 

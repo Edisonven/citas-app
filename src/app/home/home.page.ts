@@ -29,7 +29,8 @@ export class HomePage implements OnInit {
     })
 
   }
-  ngOnInit(): void {
+  async ngOnInit() {
+    await this.citaService.cargarCitas();
     this.citas = this.citaService.obtenerCitas();
   }
 }
